@@ -1,0 +1,17 @@
+.wrap { position: relative; }
+.trigger { border: none; background: none; padding: 4px 6px; font-size: 16px; line-height: 1; }
+.popover {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 50; width: min(360px, calc(100vw - 32px));
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18); display: flex; flex-direction: column; gap: 12px;
+  max-height: calc(100vh - 80px); overflow-y: auto;
+}
+.section { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-dim); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.option { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 5px; font-size: 12px; border-radius: 10px; }
+.optActive { border-color: var(--accent) !important; box-shadow: 0 0 0 2px var(--accent) inset; }
+.preview { width: 100%; height: auto; display: block; border-radius: 6px; }
+.segment { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.segment button { border: none; border-radius: 0; padding: 6px; font-weight: 600; }
+.segActive { background: var(--accent) !important; color: var(--accent-text) !important; }

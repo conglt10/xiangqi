@@ -1,0 +1,5 @@
+node_modules
+dist
+public/engine/pikafish.*
+public/coi-serviceworker.js
+*.tsbuildinfo

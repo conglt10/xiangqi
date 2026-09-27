@@ -1,0 +1,62 @@
+:root {
+  --bg: #f4f1ea;
+  --surface: #ffffff;
+  --surface-2: #f0ece3;
+  --text: #1f1c17;
+  --text-dim: #6d665a;
+  --border: #ddd5c6;
+  --accent: #2f6fdb;
+  --accent-text: #ffffff;
+  --board-wood: #e9c98f;
+  --board-line: #5b3b17;
+  --piece-face: #fdf3dc;
+  --piece-edge: #8a6532;
+  --piece-red: #c0271d;
+  --piece-black: #1d1d1d;
+  --last-move: rgba(47, 111, 219, 0.18);
+  --arrow-best: #2f6fdb;
+  --arrow-2: #2e9e5b;
+  --arrow-3: #b27a00;
+  --arrow-bad: #d33a2c;
+  --eval-red: #c0271d;
+  --eval-black: #2a2a2a;
+  --c-brilliant: #1baaa6;
+  --c-great: #5c8bb0;
+  --c-best: #3f9b3f;
+  --c-good: #77a35d;
+  --c-book: #a88865;
+  --c-inaccuracy: #e6ab2e;
+  --c-mistake: #e07a2f;
+  --c-blunder: #d33a2c;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1a18;
+    --surface: #262421;
+    --surface-2: #302d29;
+    --text: #ece7de;
+    --text-dim: #a59d90;
+    --border: #3d3934;
+    --accent: #5b93f0;
+    --board-wood: #c9a46a;
+    --last-move: rgba(91, 147, 240, 0.28);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif; font-size: 14px; line-height: 1.45; }
+button {
+  font: inherit; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  border-radius: 8px; padding: 6px 12px;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+select, input, textarea {
+  font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px;
+}
+textarea { width: 100%; font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 13px; }
+.mono { font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; }
+.dim { color: var(--text-dim); }
