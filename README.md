@@ -1,5 +1,8 @@
 # Xiangqi Trainer
 
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/05de1313-d3b9-4e54-992b-3403d94ff3dd" />
+
+
 A React app for xiangqi (Chinese chess) with no backend. The Pikafish engine runs in your browser as multithreaded WebAssembly. The architecture follows WhyBlunder (see `docs-reference/`).
 
 - **Analysis**: live MultiPV lines (1–5) ranked by Pikafish, with W/D/L, best-move arrows, an eval bar, a move tree with variations, FEN import, and PGN import/export.
