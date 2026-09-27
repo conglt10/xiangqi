@@ -61,7 +61,6 @@ export function ReviewPage() {
   const t = useT();
   const st = useReview();
   const consume = useNav((s) => s.consumeReview);
-  const openInAnalysis = useNav((s) => s.openInAnalysis);
   const [depth, setDepth] = useState(14);
   const [orientation, setOrientation] = useState<Color>('r');
   const [games, setGames] = useState<SavedGame[]>([]);
