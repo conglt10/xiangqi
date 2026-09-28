@@ -21,7 +21,15 @@ interface Props {
 export function MoveList({ items, currentKey, onSelect, blackFirst }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    ref.current?.querySelector(`.${styles.moveCurrent}`)?.scrollIntoView({ block: 'nearest' });
+    // Keep the current move visible by scrolling the list only; scrollIntoView would
+    // also scroll the page and move the board.
+    const list = ref.current;
+    const el = list?.querySelector<HTMLElement>(`.${styles.moveCurrent}`);
+    if (!list || !el) return;
+    const top = el.offsetTop - list.offsetTop;
+    const bottom = top + el.offsetHeight;
+    if (top < list.scrollTop) list.scrollTop = top;
+    else if (bottom > list.scrollTop + list.clientHeight) list.scrollTop = bottom - list.clientHeight;
   }, [currentKey]);
   const rows: { no: number; r?: MoveItem; b?: MoveItem }[] = [];
   for (const it of items) {

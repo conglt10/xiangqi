@@ -107,7 +107,7 @@ export function PlayCoachPage() {
   const hintLabel = hintLevel >= MAX_HINT_LEVEL - 1 ? t('coach.showAnswer') : t('coach.hint');
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${styles.fit}`}>
       <div className={styles.boardCol}>
         <div className={styles.boardWrap}>
           <Board
