@@ -66,3 +66,18 @@
 /* Review explanation: fixed height so content below never shifts between moves */
 .explainBody { height: 150px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding-right: 4px; overscroll-behavior: contain; }
 .explainCard .panelToggle > span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Viewport-fitted page (Play Coach): the page itself never scrolls on laptop/desktop,
+   so the board never moves; the side column scrolls inside its own box instead. */
+@media (min-width: 901px) {
+  .fit {
+    height: calc(100dvh - var(--header-h, 57px));
+    grid-template-rows: minmax(0, 1fr);
+    align-items: stretch;
+    overflow: hidden;
+  }
+  .fit .boardCol { align-self: start; }
+  .fit .boardWrap { max-width: calc((100dvh - var(--header-h, 57px) - 32px) * 0.903); }
+  .fit .side { min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding-right: 2px; }
+  .fit .side > * { flex: none; }
+}

@@ -7,6 +7,7 @@ import { useT } from './i18n';
 import { useNav, type Tab } from './store/navStore';
 import { useSettings } from './store/settingsStore';
 import { useEngineState } from './hooks/useEngine';
+import { useHeaderHeightVar } from './hooks/useHeaderHeightVar';
 import styles from './App.module.css';
 
 const TABS: { id: Tab; key: 'tab.analysis' | 'tab.coach' | 'tab.review' }[] = [
@@ -20,9 +21,10 @@ export function App() {
   const { tab, setTab } = useNav();
   const { lang, setLang, sound, setSound } = useSettings();
   const { state, error } = useEngineState();
+  const headerRef = useHeaderHeightVar();
   return (
     <div className={styles.app}>
-      <header className={styles.header}>
+      <header className={styles.header} ref={headerRef}>
         <div className={styles.brand}>
           <span className={styles.logo}>帥</span>
           <span>{t('app.title')}</span>
